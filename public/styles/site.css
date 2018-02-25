@@ -130,7 +130,11 @@ a {
     margin-bottom: 1rem;
     flex-shrink: 0; }
   .index__teacher h3 {
-    margin-bottom: 0; }
+    margin-bottom: 0;
+    text-align: center;
+    min-height: 44px; }
+  .index__teacher p {
+    text-align: center; }
 
 .index__subjects-list {
   display: flex;

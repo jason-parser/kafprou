@@ -10,11 +10,20 @@ body {
   font-size: 1.4rem;
   line-height: 1.5;
   font-family: 'Open Sans', sans-serif;
-  background: #fafafa; }
+  background: white; }
 
 h1, h2, h3 {
-  font: inherit;
-  color: inherit; }
+  color: inherit;
+  line-height: 1.3; }
+
+h1 {
+  font-size: 2.4rem; }
+
+h2 {
+  font-size: 2rem; }
+
+h3 {
+  font-size: 1.7rem; }
 
 a {
   font: inherit;
@@ -43,37 +52,100 @@ a {
     list-style: none;
     display: flex;
     justify-content: space-between;
-    background: #359; }
+    background: #2980b9; }
     .header__menu li {
       width: 25%; }
     .header__menu a {
       width: 100%;
       display: block;
       padding: 20px 40px;
-      color: #fafafa;
+      color: white;
       text-align: center;
       transition: all .3s ease; }
       .header__menu a:hover {
-        color: #359;
-        background: #fafafa;
-        box-shadow: 0 1px 3px #808080; }
+        color: #2980b9;
+        background: white;
+        box-shadow: 0 1px 3px #bdc3c7; }
 
 .main__container {
   margin: 0 auto;
   width: 1200px;
-  padding: 5px;
-  border: 1px solid #acacd2;
-  height: 80vh; }
+  padding: 15px 25px;
+  border: 1px solid #bdc3c7; }
 
 .footer__container {
   width: 1200px;
   margin: 0 auto;
   margin-top: 3rem;
-  background: #aaa;
+  background: #7f8c8d;
   padding: 15px 25px;
-  color: #fafafa;
+  color: white;
   display: flex;
   justify-content: space-between; }
 
 .footer__right p {
   text-align: right; }
+
+.index__about {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5rem; }
+  .index__about h2 {
+    margin-bottom: 3rem; }
+
+.index__about-left {
+  width: 60%; }
+
+.index__about-right {
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; }
+  .index__about-right img {
+    max-width: 280px; }
+
+.index__teachers h2 {
+  margin-bottom: 3rem; }
+
+.index__teachers-list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap; }
+
+.index__teacher {
+  width: 22%;
+  margin-right: 4%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 4rem; }
+  .index__teacher:nth-child(4n) {
+    margin-right: 0; }
+  .index__teacher img {
+    border-radius: 50%;
+    display: block;
+    margin-bottom: 1rem;
+    flex-shrink: 0; }
+  .index__teacher h3 {
+    margin-bottom: 0; }
+
+.index__subjects-list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap; }
+
+.index__subject {
+  width: 32%;
+  margin-right: 2%;
+  margin-bottom: 4rem;
+  padding: 10px 20px;
+  background: #ecf0f1; }
+  .index__subject:nth-child(3n) {
+    margin-right: 0; }
+  .index__subject h3 {
+    margin-bottom: 0; }

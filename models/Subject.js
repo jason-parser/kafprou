@@ -1,16 +1,15 @@
 var keystone = require('keystone');
 var Types = keystone.Field.Types;
 
-var Teacher = new keystone.List('Teacher', {
+var Subject = new keystone.List('Subject', {
 	map: { name: 'name' },
 	autokey: { path: 'slug', from: 'name', unique: true },
 });
 
-Teacher.add({
+Subject.add({
 	name: { type: String, required: true },
-	position: { type: String },
-	image: { type: Types.CloudinaryImage }
+	description: { type: String },
 });
 
-Teacher.defaultColumns = 'name, position|20%';
-Teacher.register();
+Subject.defaultColumns = 'name, position|20%';
+Subject.register();

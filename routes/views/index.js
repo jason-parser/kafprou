@@ -9,6 +9,33 @@ exports = module.exports = function (req, res) {
 	// item in the header navigation.
 	locals.section = 'home';
 
+	locals.data = {
+		teachers: [],
+		subjects: []
+	};
+
+	// Load the posts
+	view.on('init', function (next) {
+
+		var q = keystone.list('Teacher').model.find({});
+
+		q.exec(function (err, results) {
+			locals.data.teachers = results;
+			next(err);
+		});
+	});
+
+	view.on('init', function (next) {
+
+		var q = keystone.list('Subject').model.find({});
+
+		q.exec(function (err, results) {
+			locals.data.subjects = results;
+			next(err);
+		});
+	});
+
+
 	// Render the view
 	view.render('index');
 };

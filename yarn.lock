@@ -2988,7 +2988,16 @@ kerberos@0.0.23:
   dependencies:
     nan "~2.5.1"
 
-keystone-storage-namefunctions@1.1.1:
+keystone-storage-adapter-s3@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/keystone-storage-adapter-s3/-/keystone-storage-adapter-s3-1.1.1.tgz#eca4ffdf5fa5d97254877c96ae2512eb18b7cea5"
+  dependencies:
+    debug "^2.2.0"
+    keystone-storage-namefunctions "^1.0.0"
+    knox "^0.9.2"
+    object-assign "^4.1.0"
+
+keystone-storage-namefunctions@1.1.1, keystone-storage-namefunctions@^1.0.0:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/keystone-storage-namefunctions/-/keystone-storage-namefunctions-1.1.1.tgz#1f0986451b4e80dd434c38e0d1cd5d3c9d531b55"
 
@@ -3111,7 +3120,7 @@ klaw@^1.0.0:
   optionalDependencies:
     graceful-fs "^4.1.9"
 
-"knox@github:keystonejs/knox":
+knox@^0.9.2, knox@keystonejs/knox:
   version "0.9.2"
   resolved "https://codeload.github.com/keystonejs/knox/tar.gz/170c579ae8c0f7268d73dae77a6455f5c962d530"
   dependencies:

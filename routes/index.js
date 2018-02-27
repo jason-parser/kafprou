@@ -12,6 +12,6 @@ var routes = {
 exports = module.exports = function (app) {
 	app.get('/', routes.views.index);
 	app.get('/study', routes.views.study);
-	// app.get('/method', routes.views.method);
-	// app.get('/science', routes.views.science);
+	app.get('/method', routes.views.method);
+	app.get('/science', routes.views.science);
 };

@@ -6,7 +6,7 @@ var storage = new keystone.Storage({
   s3: {
     key: 'AKIAJLHIA7OLRJRUQIRA',
     secret: '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',
-    bucket: 'kafprou',
+    bucket: 'kafedra-guu',
     path: '/schedules'
   },
 });

@@ -19,7 +19,7 @@ exports = module.exports = function (req, res) {
 		var q = keystone.list('Schedule').model.find({});
 
 		q.exec(function (err, results) {
-			locals.data.schedules = schedules;
+			locals.data.schedules = results;
 			next(err);
 		});
 	});

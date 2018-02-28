@@ -4,9 +4,10 @@ var Types = keystone.Field.Types;
 var storage = new keystone.Storage({
   adapter: require('keystone-storage-adapter-s3'),
   s3: {
-    key: 'AKIAJLHIA7OLRJRUQIRA',
-    secret: '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',
-    bucket: 'kafedra-guu',
+    key: 'AKIAJJXSNNKQIAN6RA5A',
+    secret: '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',
+    bucket: 'kafprou',
+    region: 'eu-west-1',
     path: '/schedules'
   },
 });

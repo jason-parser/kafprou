@@ -2,14 +2,11 @@ var keystone = require('keystone');
 var Types = keystone.Field.Types;
 
 var storage = new keystone.Storage({
-  adapter: require('keystone-storage-adapter-s3'),
-  s3: {
-    key: 'AKIAJJXSNNKQIAN6RA5A',
-    secret: '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',
-    bucket: 'kafprou',
-    region: 'eu-west-1',
-    path: '/schedules'
-  },
+	adapter: keystone.Storage.Adapters.FS,
+	fs: {
+		path: keystone.expandPath('./uploads'), // required; path where the files should be stored
+  		publicPath: '/public/uploads', // path where files will be served
+	}
 });
 
 
@@ -21,7 +18,7 @@ var Schedule = new keystone.List('Schedule', {
 Schedule.add({
 	name: { type: String, required: true },
   description: { type: String },
-  file: { type: Types.File, storage: storage }
+  file: { type: Types.File, storage }
 });
 
 Schedule.defaultColumns = 'name';

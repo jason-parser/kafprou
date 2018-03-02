@@ -1,0 +1,65 @@
+.study {
+
+  &__schedules {
+    h2 {
+      text-align: center;
+    }
+  }
+
+  &__schedules-list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
+  }
+
+  &__schedule {
+    width: 32%;
+    margin-right: 2%;
+    margin-bottom: 4rem;
+    padding: 10px 20px;
+    border: 1px solid #ecf0f1;
+
+    &:nth-child(3n) {
+      margin-right: 0;
+    }
+
+    h3 {
+      margin-bottom: 0;
+    }
+
+    a {
+      display: inline-block;
+      margin-bottom: 10px;
+      background: $brand-primary;
+      color: white;
+      padding: 8px 15px;
+      border: 1px solid white;
+      transition: all .2s ease;
+
+      &:hover {
+        background: white;
+        color: $brand-primary;
+        border: 1px solid $brand-primary;
+      }
+    }
+  }
+
+  &__section {
+    margin-bottom: 4rem;
+
+    h2 {
+      text-align: center;
+    }
+
+    h3 {
+      margin-bottom: 0;
+    }
+  }
+
+  &__section-content {
+    padding: 10px 20px;
+    border: 1px solid #ecf0f1;
+  }
+}

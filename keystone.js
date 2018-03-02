@@ -11,7 +11,7 @@ keystone.init({
 	'brand': 'Kafedra',
 
 	'sass': 'public',
-	'static': 'public',
+	'static': ['public', 'uploads'],
 	'favicon': 'public/favicon.ico',
 	'views': 'templates/views',
 	'view engine': '.hbs',

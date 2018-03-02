@@ -10,7 +10,8 @@ exports = module.exports = function (req, res) {
 	locals.section = 'study';
 
 	locals.data = {
-		schedules: []
+		schedules: [],
+		sections: []
 	};
 
 	// Load the posts
@@ -20,6 +21,16 @@ exports = module.exports = function (req, res) {
 
 		q.exec(function (err, results) {
 			locals.data.schedules = results;
+			next(err);
+		});
+	});
+
+	view.on('init', function (next) {
+
+		var q = keystone.list('Учебная работа').model.find({});
+
+		q.exec(function (err, results) {
+			locals.data.sections = results;
 			next(err);
 		});
 	});

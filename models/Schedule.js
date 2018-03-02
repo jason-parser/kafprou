@@ -5,7 +5,14 @@ var storage = new keystone.Storage({
 	adapter: keystone.Storage.Adapters.FS,
 	fs: {
 		path: keystone.expandPath('./uploads'), // required; path where the files should be stored
-  		publicPath: '/public/uploads', // path where files will be served
+  	publicPath: '/uploads', // path where files will be served
+	},
+	schema: {
+		size: true,
+		mimetype: true,
+		path: true,
+		originalname: false,
+		url: true,
 	}
 });
 

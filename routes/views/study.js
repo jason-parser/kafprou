@@ -27,7 +27,7 @@ exports = module.exports = function (req, res) {
 
 	view.on('init', function (next) {
 
-		var q = keystone.list('Учебная работа').model.find({});
+		var q = keystone.list('StudyWork').model.find({});
 
 		q.exec(function (err, results) {
 			locals.data.sections = results;

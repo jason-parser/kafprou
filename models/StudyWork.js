@@ -1,7 +1,7 @@
 var keystone = require('keystone');
 var Types = keystone.Field.Types;
 
-var StudyWork = new keystone.List('Учебная работа', {
+var StudyWork = new keystone.List('StudyWork', {
 	map: { name: 'title' },
   autokey: { path: 'slug', from: 'title', unique: true },
   plural: 'Учебная работа'
@@ -12,5 +12,5 @@ StudyWork.add({
 	content: { type: Types.Html, wysiwyg: true },
 });
 
-StudyWork.defaultColumns = 'title, position|20%';
+StudyWork.defaultColumns = 'title';
 StudyWork.register();

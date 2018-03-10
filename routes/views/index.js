@@ -11,10 +11,20 @@ exports = module.exports = function (req, res) {
 
 	locals.data = {
 		teachers: [],
-		subjects: []
+		subjects: [],
+		main: []
 	};
 
-	// Load the posts
+	view.on('init', function (next) {
+
+		var q = keystone.list('MainPage').model.find({});
+
+		q.exec(function (err, results) {
+			locals.data.main = results;
+			next(err);
+		});
+	});
+
 	view.on('init', function (next) {
 
 		var q = keystone.list('Teacher').model.find({});
@@ -35,7 +45,5 @@ exports = module.exports = function (req, res) {
 		});
 	});
 
-
-	// Render the view
 	view.render('index');
 };

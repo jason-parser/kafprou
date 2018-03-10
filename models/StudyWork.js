@@ -4,7 +4,7 @@ var Types = keystone.Field.Types;
 var StudyWork = new keystone.List('StudyWork', {
 	map: { name: 'title' },
   autokey: { path: 'slug', from: 'title', unique: true },
-  plural: 'Учебная работа'
+	label: 'Учебная работа'
 });
 
 StudyWork.add({

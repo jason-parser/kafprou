@@ -35,15 +35,19 @@
   </div>
 
   <div class="index__subjects">
-    <h2>Дисциплины, преподаваемые</h2>
+    <h2 class="index__subjects-heading">Дисциплины, преподаваемые кафедрой</h2>
 
-  {{# each data.subjects}}
+    {{# each data.subjects}}
+
+    <h3 class="index__subjects-category-name">{{category}}</h3>
 
     <ul class="index__subjects-list">
-      <li class="index__subject">
-        <h3 class="index__subject-name">{{{name}}}</h2>
+      {{# each subjects}}
+        <li class="index__subject">
+          <h3 class="index__subject-name">{{{name}}}</h2>
           <p class="index__subject-description">{{{description}}}</p>
-      </li>
+        </li>
+      {{/each}}
     </ul>
 
     {{/each}}

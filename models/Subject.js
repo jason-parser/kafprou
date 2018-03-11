@@ -12,7 +12,7 @@ var Subject = new keystone.List('Subject', {
 Subject.add({
 	name: { type: String, required: true, label: 'Название' },
 	description: { type: String, label: 'Описание' },
-	category: { type: Types.Select, options: 'Бакалавриат, Магистратура, Аспирантура, Доп. образование' , label: 'Категория'}
+	category: { type: Types.Relationship, ref: 'SubjectCategory' , label: 'Категория'}
 });
 
 Subject.defaultColumns = 'name, category|20%';

@@ -1,46 +1,50 @@
-{{!< default}}
-
-{{# each data.main}}
-<div class="index__about">
+{{!
+< default}} {{# each data.main}} <div class="index__about">
   <div class="index__about-left">
     <h2>{{{title}}}</h2>
     <div>{{{content}}}</div>
   </div>
   <div class="index__about-right">
     {{#if image}}
-      <img src="{{{cloudinaryUrl image}}}" title="Государственный Университет Управления">
-    {{/if}}
+    <img src="{{{cloudinaryUrl image}}}" title="Государственный Университет Управления"> {{/if}}
   </div>
-</div>
-{{/each}}
-
-<div class="index__teachers">
-  <h2>Преподаватели</h2>
-
-  <ul class="index__teachers-list">
-    {{# each data.teachers}}
-    <li class="index__teacher">
-      {{#if image}}<img src="{{{cloudinaryUrl image width=160 height=160 crop='fit' }}}">
-      {{/if}}
-      <p>{{{position}}}</p>
-      <h3>{{{name}}}</h2>
-      <p>{{{degree}}}</p>
-      <div>{{{info}}}</div>
-    </li>
-    {{/each}}
-  </ul>
-</div>
-
-<div class="index__subjects">
-  <h2>Дисциплины</h2>
-
-<ul class="index__subjects-list">
-  {{# each data.subjects}}
-  <li class="index__subject">
-    <h3 class="index__subject-name">{{{name}}}</h2>
-    <p class="index__subject-description">{{{description}}}</p>
-  </li>
+  </div>
   {{/each}}
-</ul>
-</div>
 
+  <div class="index__teachers">
+    <h2>Преподаватели</h2>
+
+    <ul class="index__teachers-list">
+      {{# each data.teachers}}
+      <li class="teacher">
+        <img class="teacher__photo" src="{{#if image.url}}{{cloudinaryUrl image width=160 height=160 crop='fill' gravity='center' }}{{else}}/images/no-photo.png{{/if}}"
+        />
+        <p class="teacher__position">{{{position}}}</p>
+        <h3 class="teacher__name">{{{name}}}</h2>
+          <p class="teacher__degree">{{{degree}}}</p>
+
+          {{#if info}}
+          <div class="teacher__info">
+            <h4 class="teacher__info-header">Доп. информация:</h4>
+            {{{info}}}
+          </div>
+          {{/if}}
+      </li>
+      {{/each}}
+    </ul>
+  </div>
+
+  <div class="index__subjects">
+    <h2>Дисциплины, преподаваемые</h2>
+
+  {{# each data.subjects}}
+
+    <ul class="index__subjects-list">
+      <li class="index__subject">
+        <h3 class="index__subject-name">{{{name}}}</h2>
+          <p class="index__subject-description">{{{description}}}</p>
+      </li>
+    </ul>
+
+    {{/each}}
+  </div>

@@ -1,104 +1,61 @@
 .index {
-
-  &__about {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 5rem;
-
-    h2 {
-      margin-bottom: 3rem;
+    &__about {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 5rem;
+        h2 {
+            margin-bottom: 3rem;
+        }
     }
-  }
-
-  &__about-left {
-    width: 60%;
-  }
-
-  &__about-right {
-    width: 30%;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-
-    img {
-      max-width: 280px;
+    &__about-left {
+        width: 60%;
     }
-  }
-
-  &__teachers {
-
-    h2 {
-      margin-bottom: 3rem;
-      text-align: center;
+    &__about-right {
+        width: 30%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        img {
+            max-width: 280px;
+        }
     }
-  }
-
-  &__teachers-list {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    flex-wrap: wrap;
-  }
-
-  &__teacher {
-    width: 22%;
-    margin-right: 4%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 4rem;
-
-    &:nth-child(4n) {
-      margin-right: 0;
+    &__teachers {
+        h2 {
+            margin-bottom: 3rem;
+            text-align: center;
+        }
     }
-
-    img {
-      border-radius: 50%;
-      display: block;
-      margin-bottom: 1rem;
-      flex-shrink: 0;
+    &__teachers-list {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        flex-wrap: wrap;
     }
-
-    h3 {
-      margin-bottom: 0;
-      text-align: center;
-      min-height: 44px;
+    &__subjects {
+        h2 {
+            text-align: center;
+        }
     }
-
-    p {
-      text-align: center;
+    &__subjects-list {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        flex-wrap: wrap;
     }
-  }
-
-  &__subjects {
-    h2 {
-      text-align: center;
+    &__subject {
+        width: 32%;
+        margin-right: 2%;
+        margin-bottom: 4rem;
+        padding: 10px 20px;
+        background: #ecf0f1;
+        &:nth-child(3n) {
+            margin-right: 0;
+        }
+        h3 {
+            margin-bottom: 0;
+        }
     }
-  }
-
-  &__subjects-list {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    flex-wrap: wrap;
-  }
-
-  &__subject {
-    width: 32%;
-    margin-right: 2%;
-    margin-bottom: 4rem;
-    padding: 10px 20px;
-    background: #ecf0f1;
-
-    &:nth-child(3n) {
-      margin-right: 0;
-    }
-
-    h3 {
-      margin-bottom: 0;
-    }
-  }
 }

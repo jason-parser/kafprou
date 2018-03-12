@@ -1,22 +1,37 @@
 
-<div class="study__schedules">
-  <h2>Расписание</h2>
-  <ul class="study__schedules-list">
-    {{# each data.schedules}}
-    <li class="study__schedule">
-      <h3>{{{name}}}</h2>
-      <p>{{{description}}}</p>
-      <a href="{{{file.url}}}">Скачать</a>
-    </li>
-    {{/each}}
-</ul>
+<h2 class="study__heading">Учебная работа</h2>
+
+<div class="study__categories-wrapper">
+  {{# each data.subjects}}
+    <div class="study__category">
+      <h3 class="study__category-name">{{category}}</h3>
+      <ul class="study__subjects-list">
+        {{# each subjects}}
+        <li class="study__subject">
+          <h3 class="study__subject-name">{{{name}}}</h2>
+          {{#if description}}
+            <p class="study__description">{{{description}}}</p>
+          {{/if}}
+          {{#if teachers}}
+            <div class="study__teachers">
+              <h4>Преподаватели</h4>
+              {{{teachers}}}
+            </div>
+          {{/if}}
+          {{#if info}}
+            <div class="study__info">
+              <h4>Доп. информация</h4>
+              {{{info}}}
+            </div>
+          {{/if}}
+          {{#if program.url}}
+            <a href="{{{program.url}}}" class="study__program">Рабочая программа</a>
+          {{/if}}
+        </li>
+        {{/each}}
+      </ul>
+    </div>
+  {{/each}}
 </div>
 
-
-{{# each data.sections}}
-<div class="study__section">
-  <h2>{{{title}}}</h2>
-  <div class="study__section-content">{{{content}}}</div>
-</div>
-{{/each}}
 

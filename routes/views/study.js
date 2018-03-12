@@ -1,4 +1,5 @@
 var keystone = require('keystone');
+var async = require('async');
 
 exports = module.exports = function (req, res) {
 
@@ -10,29 +11,44 @@ exports = module.exports = function (req, res) {
 	locals.section = 'study';
 
 	locals.data = {
-		schedules: [],
-		sections: []
+		subjects: []
 	};
 
-	// Load the posts
-	view.on('init', function (next) {
+	view.on('init', function(next) {
+		
+		keystone.list('SubjectCategory').model.find().exec(function(err, results) {
+			
+			if (err || !results.length) {
+				return next(err);
+			}
+			
+			results.map((item) => {
+				return {
+					category: item.name,
+				}
+			});
 
-		var q = keystone.list('Schedule').model.find({});
-
-		q.exec(function (err, results) {
-			locals.data.schedules = results;
-			next(err);
+			locals.data.subjects = results.map((item) => {
+				return {
+					id: item._id,
+					category: item.name,
+					subjects: []
+				}
+			});
+			
+			async.each(locals.data.subjects, function(item, next) {
+				
+				keystone.list('Subject').model.find().where('category', item.id).exec(function(err, results) {
+					item.subjects = results;
+					next(err);
+				});
+				
+			}, function(err) {
+				next(err);
+			});
+			
 		});
-	});
-
-	view.on('init', function (next) {
-
-		var q = keystone.list('StudyWork').model.find({});
-
-		q.exec(function (err, results) {
-			locals.data.sections = results;
-			next(err);
-		});
+		
 	});
 
 	// Render the view

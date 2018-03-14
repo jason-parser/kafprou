@@ -1,7 +1,11 @@
-{{# each data.science}}
 <h1 class="science__heading">Научная работа</h1>
-<div class="science__block">
-  <h2>{{{title}}}</h2>
-  <div>{{{content}}}</div>
+
+<div class="science__blocks">
+  {{# each data.science}}
+    <div class="science__block">
+      <h2>{{{title}}}</h2>
+      <div>{{{content}}}</div>
+    </div>
+  {{/each}}
 </div>
-{{/each}}
+

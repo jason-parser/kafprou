@@ -223,11 +223,11 @@ a {
 
 .science__block {
   background: #fafafa;
-  width: 45%;
-  margin-right: 10%;
+  width: 49%;
+  margin-right: 2%;
   padding: 10px 20px;
   margin-bottom: 20px; }
-  .science__block:nth-child {
+  .science__block:nth-child(2n) {
     margin-right: 0; }
   .science__block ul, .science__block ol {
     padding-left: 15px; }

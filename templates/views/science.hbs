@@ -1,8 +1,7 @@
-
-<div class="index__teachers">
-  <h2>Конференции</h2>
+{{# each data.science}}
+<h1 class="science__heading">Научная работа</h1>
+<div class="science__block">
+  <h2>{{{title}}}</h2>
+  <div>{{{content}}}</div>
 </div>
-
-<div class="index__teachers">
-  <h2>Научные работы</h2>
-</div>
+{{/each}}

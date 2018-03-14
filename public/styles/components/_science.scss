@@ -1,0 +1,23 @@
+.science {
+  &__heading {
+    text-align: center;
+  }
+  &__blocks {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  &__block {
+    background: #fafafa;
+    width: 45%;
+    margin-right: 10%;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+
+    &:nth-child {
+      margin-right: 0;
+    }
+    ul, ol {
+      padding-left: 15px;
+    }
+  }
+}

@@ -213,3 +213,21 @@ a {
     padding: 0;
     text-align: center;
     margin-bottom: 1.5rem; }
+
+.science__heading {
+  text-align: center; }
+
+.science__blocks {
+  display: flex;
+  flex-wrap: wrap; }
+
+.science__block {
+  background: #fafafa;
+  width: 45%;
+  margin-right: 10%;
+  padding: 10px 20px;
+  margin-bottom: 20px; }
+  .science__block:nth-child {
+    margin-right: 0; }
+  .science__block ul, .science__block ol {
+    padding-left: 15px; }

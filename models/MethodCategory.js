@@ -16,17 +16,16 @@ var storage = new keystone.Storage({
 	}
 });
 
-
-var Schedule = new keystone.List('Schedule', {
-	map: { name: 'name' },
-	autokey: { path: 'slug', from: 'name', unique: true },
+var MethodCategory = new keystone.List('MethodCategory', {
+	map: { name: 'title' },
+  autokey: { path: 'slug', from: 'title', unique: true },
+	label: 'Методическая работа'
 });
 
-Schedule.add({
-	name: { type: String, required: true },
-  description: { type: String },
-  file: { type: Types.File, storage }
+MethodCategory.add({
+	title: { type: String, required: true },
+	content: { type: Types.Html, wysiwyg: true, label: 'Описание' },
 });
 
-Schedule.defaultColumns = 'name';
-Schedule.register();
+MethodCategory.defaultColumns = 'title';
+MethodCategory.register();

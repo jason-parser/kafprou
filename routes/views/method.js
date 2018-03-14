@@ -1,4 +1,5 @@
 var keystone = require('keystone');
+var async = require('async');
 
 exports = module.exports = function (req, res) {
 
@@ -10,18 +11,44 @@ exports = module.exports = function (req, res) {
 	locals.section = 'method';
 
 	locals.data = {
-		schedules: []
+		methods: []
 	};
 
-	// Load the posts
 	view.on('init', function (next) {
 
-		var q = keystone.list('Schedule').model.find({});
+		keystone.list('MethodCategory').model.find().exec(function (err, results) {
 
-		q.exec(function (err, results) {
-			locals.data.schedules = results;
-			next(err);
+			if (err || !results.length) {
+				return next(err);
+			}
+
+			results.map((item) => {
+				return {
+					category: item.name,
+				}
+			});
+
+			locals.data.methods = results.map((item) => {
+				return {
+					id: item._id,
+					category: item.title,
+					methods: []
+				}
+			});
+
+			async.each(locals.data.methods, function (item, next) {
+
+				keystone.list('MethodBlock').model.find().where('category', item.id).exec(function (err, results) {
+					item.methods = results;
+					next(err);
+				});
+
+			}, function (err) {
+				next(err);
+			});
+
 		});
+
 	});
 
 	// Render the view

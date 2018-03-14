@@ -10,16 +10,16 @@ exports = module.exports = function (req, res) {
 	locals.section = 'science';
 
 	locals.data = {
-		schedules: []
+		science: []
 	};
 
 	// Load the posts
 	view.on('init', function (next) {
 
-		var q = keystone.list('Schedule').model.find({});
+		var q = keystone.list('Science').model.find({});
 
 		q.exec(function (err, results) {
-			locals.data.schedules = results;
+			locals.data.science = results;
 			next(err);
 		});
 	});

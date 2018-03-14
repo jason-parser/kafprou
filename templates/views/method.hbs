@@ -1,8 +1,31 @@
 
-<div class="index__teachers">
-  <h2>Рабочие программы</h2>
+<h2 class="study__heading">Методическая работа</h2>
+
+<div class="study__categories-wrapper">
+  {{# each data.methods}}
+    <div class="study__category">
+      <h3 class="study__category-name">{{category}}</h3>
+      <ul class="study__subjects-list">
+        {{# each methods}}
+        <li class="study__subject">
+          <h3 class="study__subject-name">{{{name}}}</h2>
+          {{#if description}}
+            <p class="study__description">{{{description}}}</p>
+          {{/if}}
+          {{#if info}}
+            <div class="study__info">
+              <h4>Доп. информация</h4>
+              {{{info}}}
+            </div>
+          {{/if}}
+          {{#if document.url}}
+            <a href="{{{document.url}}}" class="study__program">Прилагаемый файл</a>
+          {{/if}}
+        </li>
+        {{/each}}
+      </ul>
+    </div>
+  {{/each}}
 </div>
 
-<div class="index__teachers">
-  <h2>Образовательные программы</h2>
-</div>
+

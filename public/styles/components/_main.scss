@@ -1,8 +1,12 @@
 .main {
   &__container {
     margin: 0 auto;
-    width: 1200px;
+    width: 100%;
     padding: 15px 25px;
     border: 1px solid #bdc3c7;
+
+    @media (min-width: 1200px) {
+      width: 1200px;
+    }
   }
 }

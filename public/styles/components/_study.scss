@@ -5,10 +5,31 @@
     &__categories-wrapper {
         width: 100%;
         display: flex;
-        justify-content: space-between;
+        flex-wrap: wrap;
+        
+
+        @media (min-width: 940px) {
+            justify-content: space-between;
+        }
     }
     &__category {
-        width: 24%;
+        width: 100%;
+        margin-right: 0;
+
+
+        @media (min-width: 640px) {
+            width: 48%;
+            margin-right: 4%;
+    
+            &:nth-child(2n) {
+                margin-right: 0;
+            }
+        }
+
+        @media (min-width: 940px) {
+            width: 24%;
+            margin-right: 0;
+        }
     }
     &__category-name {
         text-align: center;

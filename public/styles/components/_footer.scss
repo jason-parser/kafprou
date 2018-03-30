@@ -1,18 +1,35 @@
 .footer {
   &__container {
-    width: 1200px;
+    width: 100%;
     margin: 0 auto;
     margin-top: 3rem;
     background: #7f8c8d;
     padding: 15px 25px;
     color: white;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    
+
+    @media (min-width: 900px) {
+      flex-direction: row;
+      justify-content: space-between;
+      text-align: left;
+    }
+
+
+    @media (min-width: 1200px) {
+      width: 1200px;
+    }
   }
 
   &__right {
-    p {
-      text-align: right;
+
+    @media (min-width: 900px) {
+      p {
+        text-align: right;
+      }
     }
   }
 }

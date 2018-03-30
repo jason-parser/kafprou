@@ -8,16 +8,22 @@
   }
   &__block {
     background: #fafafa;
-    width: 49%;
-    margin-right: 2%;
+    width: 100%;
     padding: 10px 20px;
     margin-bottom: 20px;
 
-    &:nth-child(2n) {
-      margin-right: 0;
-    }
+    
     ul, ol {
       padding-left: 15px;
+    }
+
+    @media (min-width: 815px) {
+      width: 49%;
+      margin-right: 2%;
+
+      &:nth-child(2n) {
+        margin-right: 0;
+      }
     }
   }
 }

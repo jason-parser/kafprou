@@ -12,7 +12,6 @@ keystone.init({
 
 	'sass': 'public',
 	'static': ['public', 'uploads'],
-	'favicon': 'public/favicon.ico',
 	'views': 'templates/views',
 	'view engine': '.hbs',
 
